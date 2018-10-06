@@ -1,0 +1,17 @@
+.DS_Store
+dist
+node_modules
+npm-debug.log
+
+yarn.lock
+package-lock.json
+
+.env.default
+.env.development
+.env.production
+.env.test
+
+base_data/
+tasks/exports/temp/*.csv
+
+app/public/uploads/
