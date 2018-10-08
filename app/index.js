@@ -22,6 +22,8 @@ if (config.env === 'development') {
     noInfo: true, publicPath: webpackConfig.output.publicPath
   }))
 
+  app.use('/app/public', express.static('app/public'))
+
   app.use(require('webpack-hot-middleware')(compiler, {
     log: console.log,
     path: '/__webpack_hmr',
@@ -29,6 +31,7 @@ if (config.env === 'development') {
   }))
 } else {
   console.log(`Starting server in ${config.env} with static assets`)
+  app.use('/app/public', express.static('app/public'))
   app.use('/assets', expressStaticGzip('app/dist'))
 }
 

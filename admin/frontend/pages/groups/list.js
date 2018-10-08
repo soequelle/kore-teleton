@@ -15,7 +15,7 @@ class GroupsList extends ListPageComponent {
   getColumns () {
     return [
       {
-        'title': 'Name',
+        'title': 'Nombre',
         'property': 'name',
         'default': 'N/A',
         'sortable': true,
@@ -28,7 +28,7 @@ class GroupsList extends ListPageComponent {
         }
       },
       {
-        'title': 'Created',
+        'title': 'Creación',
         'property': 'dateCreated',
         'default': 'N/A',
         'sortable': true,
@@ -39,7 +39,7 @@ class GroupsList extends ListPageComponent {
         }
       },
       {
-        'title': 'Actions',
+        'title': 'Acciones',
         'sortable': false,
         formatter: (row) => {
           return <Link className='button' to={'/manage/groups/' + row.uuid}>
@@ -75,14 +75,14 @@ class GroupsList extends ListPageComponent {
 GroupsList.config({
   name: 'groups-list',
   path: '/manage/groups',
-  title: 'Groups',
+  title: 'Grupos',
   icon: 'users',
   exact: true,
   validate: loggedIn,
 
   headerLayout: 'create',
   createComponent: CreateGroup,
-  createComponentLabel: 'New Group',
+  createComponentLabel: 'Nuevo Group',
 
   apiUrl: '/admin/groups'
 })

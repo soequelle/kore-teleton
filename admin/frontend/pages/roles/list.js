@@ -15,7 +15,7 @@ class RoleList extends ListPageComponent {
   getColumns () {
     return [
       {
-        'title': 'Name',
+        'title': 'Nombre',
         'property': 'name',
         'default': 'N/A',
         formatter: (row) => {
@@ -27,7 +27,7 @@ class RoleList extends ListPageComponent {
         }
       },
       {
-        'title': 'Created',
+        'title': 'Creación',
         'property': 'dateCreated',
         'default': 'N/A',
         formatter: (row) => {
@@ -42,7 +42,7 @@ class RoleList extends ListPageComponent {
         formatter: (row) => {
           if (row.isDefault) {
             return (
-              'Yes'
+              'Default'
             )
           }
         }
@@ -90,7 +90,7 @@ RoleList.config({
 
   headerLayout: 'create',
   createComponent: CreateRole,
-  createComponentLabel: 'New Role',
+  createComponentLabel: 'Nuevo rol',
 
   apiUrl: '/admin/roles'
 })

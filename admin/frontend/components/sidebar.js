@@ -17,6 +17,10 @@ import AppConfig from '../pages/developer-tools/app-config'
 import RequestLogs from '../pages/developer-tools/request-logs'
 import FormBuilder from '../pages/developer-tools/form-builder'
 
+import Mechanisms from '../pages/mechanisms/list'
+import DeletedMechanisms from '../pages/mechanisms/deleted-list'
+import Historics from '../pages/historics/list'
+import DeletedHistorics from '../pages/historics/deleted-list'
 // #Import
 
 class Sidebar extends Component {
@@ -51,7 +55,7 @@ class Sidebar extends Component {
     return [
       Dashboard.asSidebarItem(),
       {
-        title: 'Manage Your Team',
+        title: 'Administración',
         icon: 'users',
         to: '/manage',
         open: false,
@@ -62,9 +66,11 @@ class Sidebar extends Component {
           Groups.asSidebarItem()
         ]
       },
+      Mechanisms.asSidebarItem(),
+      Historics.asSidebarItem(),
       // #Modules
       {
-        title: 'Load Data',
+        title: 'Cargar datos',
         icon: 'cloud-upload',
         to: '/import',
         open: false,
@@ -72,7 +78,7 @@ class Sidebar extends Component {
           UsersImport.asSidebarItem()
         ]
       }, {
-        title: 'Developer Tools',
+        title: 'Herramientas de desarrollo',
         icon: 'github',
         to: '/devtools',
         open: false,
@@ -82,16 +88,18 @@ class Sidebar extends Component {
           FormBuilder.asSidebarItem()
         ]
       }, {
-        title: 'Restore data',
+        title: 'Restauraciones',
         icon: 'trash-o',
         to: '/restore',
         open: false,
         dropdown: [
-          DeletedUsers.asSidebarItem()// #Restore
+          DeletedUsers.asSidebarItem(),
+          DeletedMechanisms.asSidebarItem(),
+          DeletedHistorics.asSidebarItem()// #Restore
         ]
       },
       {
-        title: 'UI Components',
+        title: 'Componentes UI',
         icon: 'object-group',
         to: '/ui-components',
         open: false,
@@ -144,7 +152,7 @@ class Sidebar extends Component {
       'fa-expand': this.state.collapsed,
       'fa-compress': !this.state.collapsed
     })
-    let fileImg = (this.state.collapsed) ? 'icono-white.svg' : 'horizontal-white.svg'
+    let fileImg = (this.state.collapsed) ? 'icono-white.svg' : 'teleton-white.png'
 
     if (!this.props.burgerState) {
       divClass = divClass + ' is-hidden-touch'
