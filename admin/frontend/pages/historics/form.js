@@ -1,0 +1,60 @@
+import React, { Component } from 'react'
+
+import api from '~base/api'
+import MarbleForm from '~base/components/marble-form'
+
+class HistoricForm extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      formData: this.props.formData
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({formData: nextProps.formData})
+  }
+
+  async submitHandler (formData) {
+    const res = await api.post(this.props.url, formData)
+
+    if (this.props.load) { await this.props.load() }
+    return res.data
+  }
+
+  successHandler (data) {
+    if (this.props.finishUp) { this.props.finishUp(data) }
+  }
+
+  render () {
+    const schema = {
+      mechanism: {
+        type: 'string',
+        widget: 'SelectWidget',
+        label: 'Mechanism',
+        required: true,
+        options: this.props.mechanismsCat
+      },
+      'file': {
+        'widget': 'FileWidget',
+        'name': 'Archivo',
+        'type': 'text',
+        'size': 20
+      }
+    }
+
+    return (
+      <div>
+        <MarbleForm schema={schema}
+          formData={this.state.formData}
+          onSuccess={(data) => this.successHandler(data)}
+          onSubmit={(data) => this.submitHandler(data)}
+          buttonLabel={this.props.label || 'Save'}
+          defaultSuccessMessage='Historic updated'
+        />
+      </div>
+    )
+  }
+}
+
+export default HistoricForm

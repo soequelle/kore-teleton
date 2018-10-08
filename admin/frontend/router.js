@@ -27,6 +27,12 @@ import RequestLogs from './pages/developer-tools/request-logs'
 import AppConfig from './pages/developer-tools/app-config'
 import Buttons from './pages/ui-components/buttons'
 import FormBuilder from './pages/developer-tools/form-builder'
+import Mechanisms from './pages/mechanisms/list'
+import DeletedMechanisms from './pages/mechanisms/deleted-list'
+import MechanismDetail from './pages/mechanisms/detail'
+import Historics from './pages/historics/list'
+import DeletedHistorics from './pages/historics/deleted-list'
+import HistoricDetail from './pages/historics/detail'
 // #Import
 
 class NotFoundPage extends Component {
@@ -71,6 +77,12 @@ const AppRouter = () => {
           {Buttons.asRouterItem()}
           {FormBuilder.asRouterItem()}
 
+          {Mechanisms.asRouterItem()}
+          {DeletedMechanisms.asRouterItem()}
+          {MechanismDetail.asRouterItem()}
+          {Historics.asRouterItem()}
+          {DeletedHistorics.asRouterItem()}
+          {HistoricDetail.asRouterItem()}
           {/* Add routes here */}
 
           <Route component={NotFoundPage} />

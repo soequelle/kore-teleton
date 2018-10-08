@@ -5,6 +5,9 @@ const Organization = require('./organization')
 const Role = require('./role')
 const Group = require('./group')
 const AppConfig = require('./app-config')
+const Mechanism = require('./mechanism')
+const Historic = require('./historic')
+const Soriana = require('./soriana')
 // #Import
 
 module.exports = {
@@ -14,5 +17,8 @@ module.exports = {
   Organization,
   Role,
   Group,
-  AppConfig// #Exports
+  AppConfig,
+  Mechanism,
+  Historic,
+  Soriana// #Exports
 }

@@ -1,10 +1,10 @@
 .offcanvas {
-  background-color: #093952;
+  background-color: #6B1D74;
   .collapse-btn {
     position: absolute;
     z-index: 99;
     right: -25px;
-    background-color: #066391;
+    background-color: #783871;
     color: white;
     cursor: pointer;
     border-radius: 0px 3px 3px 0px;
@@ -14,7 +14,7 @@
     top: 0;
 
     &:hover{
-      background-color: #066391;
+      background-color: #783871;
     }
   }
   @media only screen and (max-width: 450px) and (orientation: portrait) {
@@ -48,14 +48,15 @@
       a{
         border-left: 1px solid transparent;
         &:hover {
-          background-color: #064D70;
+          background-color: #ffcf31;
           border-left: 1px solid #fff;
+          color: #6B1D74;
         }
         &.is-active {
-          background-color: #064D70;
+          background-color: #ffcf31;
           border-left: 1px solid #fff;
           .item-link-title {
-            color: white;
+            color: #6B1D74;
           }
         }
       }
@@ -65,12 +66,12 @@
       & > ul.menu-list > li {
         .dropdown {
           border-radius: 2px;
-          color: #4a4a4a;
+          color: #6B1D74;
           display: block;
           padding: 0.5em 0.75em;
           position: relative;
           &.is-active {
-            background-color: #066391;
+            background-color: #783871;
           }
           & > ul {
             margin: 0;
@@ -109,10 +110,10 @@
       }
     }
     li {
-      background-color: #093952;
+      background-color: #6B1D74;
       position: relative;
       .item-link-title {
-        color: #b4becc;
+        color: #ffcf31;
       }
     } 
   }
@@ -123,13 +124,13 @@
   .menu ul li ul {
     margin: 0px;
     padding: 0px;
-    border-left: 1px solid #064D70;
+    border-left: 1px solid #783871;
     li {
-      background-color:#093952;
+      background-color:#6B1D74;
       a {
         padding-left: 1.8em;
         &.is-active {
-          background-color: #064D70;
+          background-color: #783871;
           span {
             color: #fff !important;
           }

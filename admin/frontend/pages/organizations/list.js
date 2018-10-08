@@ -74,14 +74,14 @@ class OrganizationList extends ListPageComponent {
 OrganizationList.config({
   name: 'organization-list',
   path: '/manage/organizations',
-  title: 'Organizations',
+  title: 'Centros de atención',
   icon: 'users',
   exact: true,
   validate: loggedIn,
 
   headerLayout: 'create',
   createComponent: CreateOrganization,
-  createComponentLabel: 'New Organization',
+  createComponentLabel: 'Nuevo',
 
   apiUrl: '/admin/organizations'
 })
